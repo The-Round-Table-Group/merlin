@@ -1,0 +1,2 @@
+!function(a){a(document).ready((function(){var n=location.pathname.split("/");""!==n[1]?a('.nav-link[href^="/'+n[1]+'"]').addClass("active"):a(".home").addClass("active")}))}(jQuery);
+//# sourceMappingURL=site-dist.js.map

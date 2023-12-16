@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="content-language" content="en-us" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Merlin Knowledge Base</title>
+
+		{{ fn('wp_head') }}
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:ital,wght@0,400;0,600;1,400&display=swap" />
+	</head>
+
+	<body data-template="base.twig" class="{{ body_class }}">
+        {% include 'components/navigation.twig' %}
+
+        {% if not function('is_user_logged_in') %}
+            <div class="not-logged-in-msg">
+                <a href="/wp-admin">Please Log In</a>
+                <div class="highlight"></div>
+            </div>
+        {% else %}
+            {% include 'components/header.twig' %}
+
+            <section class="main-post-wrapper" role="main" aria-label="Main page content">
+                {% block content %}{% endblock %}
+            </section>
+
+            {% include 'components/footer.twig' %}
+        {% endif %}
+
+		{{ fn('wp_footer') }}
+	</body>
+</html>

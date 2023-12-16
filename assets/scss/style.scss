@@ -1,0 +1,21 @@
+/*!
+    Theme Name: Merlin
+    Author: Shane Schroll
+    Author URI: https://shaneschroll.dev
+    Description: Merlin Knowledge Base for The Round Table Group.
+    Text Domain: mkb
+    Version: 1.5.0
+*/
+
+// Import dependencies
+@import 'packages/normalize';       // Soft reset + browser consistencies
+@import 'variables';                // Sitewide variables, custom mixins, custom functions
+@import 'mixins';                   // Sitewide mixins and helpers
+@import 'globals';                  // Base html/body setup, wrappers, containers
+@import 'typography';               // Sitewide typography: sizing, spacing, initial colors
+
+// Import components
+@import 'components/component-loader';
+
+// Import templates
+@import 'templates/template-loader';

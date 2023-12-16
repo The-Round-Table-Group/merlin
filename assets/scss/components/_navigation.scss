@@ -1,0 +1,80 @@
+.site-nav {
+    max-width: 100%;
+    padding: 1.25rem 1rem;
+    background-color: $slate;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 75rem;
+        margin: 0 auto;
+
+        .user-avatar-chip {
+            img, p {
+                display: inline-block;
+            }
+
+            img {
+                width: 2.85rem;
+                margin-right: 0.85rem;
+                border-radius: $circle;
+                border: 2px solid $white;
+            }
+
+            p {
+                position: relative;
+                top: 0.5rem;
+                margin-top: 0;
+                margin-bottom: 0;
+                vertical-align: top;
+                font-size: 1.1rem;
+                color: $white;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        // nav links
+        ul {
+            display: flex;
+            max-width: 23rem;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 0 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+    
+        .nav-link {
+            position: relative;
+            font-size: 1.1rem;
+            color: $white;
+    
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: $light-purple;
+                transition: all 0.2s ease-out;
+            }
+    
+            &:hover {
+                color: $light-purple;
+    
+                &:before {
+                    width: 100%;
+                    transition: all 0.2s ease-out;
+                }
+            }
+    
+            &.active {
+                color: $light-purple;
+                &:before { width: 100%; }
+            }
+        }
+    }
+}

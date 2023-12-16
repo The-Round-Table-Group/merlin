@@ -1,0 +1,11 @@
+.login-button {
+    width: 5rem;
+    padding: 0.35rem 1rem;
+    background-color: $light-purple;
+    color: $white;
+    border-radius: $radius-small;
+
+    &:hover {
+        background-color: darken($light-purple, 10%);
+    }
+}

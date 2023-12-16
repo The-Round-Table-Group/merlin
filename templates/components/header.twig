@@ -1,0 +1,28 @@
+{% if is_front_page %}
+    <header class="home-header" style="background-image: url('{{ post.thumbnail.src }}');">
+        <section class="search-bar">
+            <h1>
+                Merlin
+                <img src="{{ theme.link }}/assets/media/merlin-avatar.png" alt="s" />
+                KB
+            </h1>
+
+            {{ function('do_shortcode', '[ivory-search id="24" title="AJAX Search Form"]') }}
+        </section>
+    </header>
+{% else %}
+    <header class="site-header">
+
+        {% if is_single %}
+            <div class="category-wrapper">
+                {% for term in post.terms('kbtype') %}
+                    <span class="category-wrapper--category">{{ term.name }}</span>
+                {% endfor %}
+            </div>
+
+            <h1>{{ post.title }}</h1>
+        {% else %}
+            <h1 class="title-only">{{ post.title }}</h1>
+        {% endif %}
+    </header>
+{% endif %}
