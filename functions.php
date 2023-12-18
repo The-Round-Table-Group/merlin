@@ -15,6 +15,7 @@ class MerlinSite extends Timber\Site {
 	function __construct() {
 		// Action Hooks //
 		add_action( 'init', [ $this, 'register_post_types' ] );
+        add_action( 'acf/init', array( $this, 'mkb_render_custom_blocks' ) );
 		add_action( 'after_setup_theme', [ $this, 'after_setup_theme' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'admin_head', [ $this, 'admin_head_css' ] );
@@ -25,6 +26,7 @@ class MerlinSite extends Timber\Site {
 		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
 		add_filter( 'manage_pages_columns', [ $this, 'remove_pages_count_columns' ] );
 		add_filter( 'admin_footer_text', [ $this, 'admin_footer_white_label' ] );
+        add_filter( 'block_categories', array( $this, 'mkb_block_category' ), 10, 2 );
 
 		parent::__construct();
 	}
@@ -94,6 +96,24 @@ class MerlinSite extends Timber\Site {
 		add_theme_support( 'html5' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'disable-custom-colors' );
+	}
+
+    // registers and renders our custom acf blocks
+	function mkb_render_custom_blocks() {
+		require 'acf-block-setup.php';
+	}
+
+	// creates a custom category for our theme-specific blocks
+	function mkb_block_category( $categories, $post ) {
+		return array_merge(
+			$categories,
+			[
+				[
+					'slug'  => 'mkb-blocks',
+					'title' => 'Custom Blocks',
+				],
+			]
+		);
 	}
 
 	// add custom post types

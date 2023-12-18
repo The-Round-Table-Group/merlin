@@ -12,9 +12,12 @@
         </div>
 
         <div class="kb-intro">
-            <h1>{{ post.title }}</h1>
-            {{ post.content }}
+            <h1 class="single-intro">{{ post.title }}</h1>
         </div>
+
+        <article class="kb-content">
+            {{ post.content }}
+        </article>
     </section>
 </section>
 {% endblock %}

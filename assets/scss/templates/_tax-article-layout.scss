@@ -47,24 +47,32 @@
         }
 
         .kb-intro {
-            h1 {
+            h1, .single-intro {
                 margin-top: 0;
-                margin-bottom: 4rem;
                 font-weight: $semibold;
             }
+
+            .archive-intro { margin-bottom: 4rem; }
+            .single-intro { margin-bottom: 2rem; }
+        }
+
+        // single article content
+        .kb-content {
+            h1, h2, h3, h4, h5, h6 { font-weight: $semibold; }
         }
     }
 }
 
 // left side navigation panel
 .menu-section {
-    border-bottom: 1px solid $slate;
-    margin-bottom: 2.75rem;
+    padding-bottom: 1.75rem;
 
     &--dropdown-title {
         position: relative;
         font-size: 1.05rem;
         margin-bottom: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         width: 100%;
         font-weight: $semibold;
         text-align: left;
@@ -101,7 +109,7 @@
         .fa-sort-down {
             display: inline-block;
             position: absolute;
-            top: -2px;
+            top: 3px;
             right: 2px;
             font-size: 1.2rem;
         }

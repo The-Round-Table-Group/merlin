@@ -1,0 +1,35 @@
+.info-bar {
+    width: 100%;
+    padding: 0.65rem 1rem 1rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+
+    &--blue {
+        border-color: $blue-bar;
+        background-color: $blue-bg;
+    }
+
+    &--yellow {
+        border-color: $yellow-bar;
+        background-color: $yellow-bg;
+    }
+
+    &--red {
+        border-color: $red-bar;
+        background-color: $red-bg;
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        font-size: 1.75rem;
+        font-weight: $heavy;
+    }
+
+    &__content {
+        margin-bottom: 0;
+    }
+}
