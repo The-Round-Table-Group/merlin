@@ -9,5 +9,15 @@
             $('.home').addClass('active');
         }
 
+        $('.menu-section__menu').each(function() {
+            $(this).hide();
+        });
+
+        $('.menu-section--dropdown-title').click(function() {
+            var $this = $(this);
+            $this.toggleClass('menu-open');
+            $this.next('.menu-section__menu').slideToggle(450);
+        });
+
     });
 })(jQuery);

@@ -1,0 +1,32 @@
+{% extends 'base.twig' %}
+
+{# Main knowledge base archive page #}
+
+{% block content %}
+<div class="taxonomy-layout">
+
+    {% include 'components/kb-side-nav.twig' %}
+
+    <section class="article-wrapper">
+        <div class="kb-intro">
+            <h1>Knowledge Base Archive</h1>
+        </div>
+
+        <section class="kb-article-grid">
+            {% for term in terms %}
+
+                {% set count = 0 %}
+                {% for article in term.posts() %}
+                    {% set count = count + 1 %}
+                {% endfor %}
+
+                <a class="kb-card" href="{{ term.link }}">
+                    <h4 class="kb-card--category-name">{{ term.name }}</h4>
+                    <p class="kb-card--description">{{ term.card_description }}</p>
+                    <p class="kb-card--article-count">{{ count }} Articles</p>
+                </a>
+            {% endfor %}
+        </section>
+    </section>
+</div>
+{% endblock %}

@@ -1,2 +1,2 @@
-!function(a){a(document).ready((function(){var n=location.pathname.split("/");""!==n[1]?a('.nav-link[href^="/'+n[1]+'"]').addClass("active"):a(".home").addClass("active")}))}(jQuery);
+!function(e){e(document).ready((function(){var n=location.pathname.split("/");""!==n[1]?e('.nav-link[href^="/'+n[1]+'"]').addClass("active"):e(".home").addClass("active"),e(".menu-section__menu").each((function(){e(this).hide()})),e(".menu-section--dropdown-title").click((function(){var n=e(this);n.toggleClass("menu-open"),n.next(".menu-section__menu").slideToggle(450)}))}))}(jQuery);
 //# sourceMappingURL=site-dist.js.map

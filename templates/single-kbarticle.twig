@@ -1,7 +1,14 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-<section class="content-block">
-	{{ post.content }}
+<section class="taxonomy-layout">
+    {% include 'components/kb-side-nav.twig' %}
+
+    <section class="article-wrapper">
+        <div class="kb-intro">
+            <h1>{{ post.title }}</h1>
+            {{ post.content }}
+        </div>
+    </section>
 </section>
 {% endblock %}

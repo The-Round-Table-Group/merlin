@@ -27,8 +27,7 @@ img {
 .main-post-wrapper {
     max-width: 77rem;
     margin: 0 auto;
-    padding: 1.5rem 1rem;
-    @include mq(lg) { padding: 1rem; }
+    padding: 0 1rem;
 }
 
 .content-block {

@@ -1,5 +1,5 @@
 <?php
-// Template Name: Article Archive
+// Template for the kbtype taxonomy archive
 $context = Timber::get_context();
 $post = Timber::get_post();
 $context['post'] = $post;
@@ -20,5 +20,5 @@ $context['terms'] = Timber::get_terms(
     ]
 );
 
-$templates = ['pages/article-archive.twig'];
+$templates = ['pages/taxonomy-kbtype.twig'];
 Timber::render( $templates, $context );

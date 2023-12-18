@@ -1,0 +1,24 @@
+{% extends 'base.twig' %}
+
+{# Knowledge base category pages #}
+
+{% block content %}
+<section class="taxonomy-layout">
+    {% include 'components/kb-side-nav.twig' %}
+
+    <section class="article-wrapper">
+        <div class="kb-intro">
+            <h1>{{ term.name }}</h1>
+            <p>{{ term.description }}</p>
+        </div>
+
+        <div>
+            {% for post in term.posts %}
+                <p>
+                    <a class="" href="{{ post.link }}">{{ post.title }}</a>
+                </p>
+            {% endfor %}
+        </div>
+    </section>
+</section>
+{% endblock %}

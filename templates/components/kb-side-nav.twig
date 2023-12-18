@@ -1,0 +1,22 @@
+<aside class="article-navigation">
+    <p class="nav-title">All Articles</p>
+    {% for term in terms %}
+
+        {% set count = 0 %}
+        {% for article in term.posts() %}
+            {% set count = count + 1 %}
+        {% endfor %}
+
+        <div class="menu-section">
+            <button class="menu-section--dropdown-title">
+                {{ term.name }} ({{ count }}) <span class="fa-solid fa-sort-down"></span>
+            </button>
+
+            <div class="menu-section__menu">
+                {% for article in term.posts() %}
+                    <a class="menu-item" href="{{ article.link }}">{{ article.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</aside>
