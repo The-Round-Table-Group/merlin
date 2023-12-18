@@ -5,6 +5,12 @@
     {% include 'components/kb-side-nav.twig' %}
 
     <section class="article-wrapper">
+        <div class="kb-breadcrumbs">
+            <a href="/knowledge-base-archive">Archive Home</a> <span>/</span>
+            <a href="{{ post.terms('kbtype')[0].link }}">{{ post.terms('kbtype')[0] }}</a> <span>/</span>
+            <a href="{{ post.link }}">{{ post.title }}</a>
+        </div>
+
         <div class="kb-intro">
             <h1>{{ post.title }}</h1>
             {{ post.content }}

@@ -7,6 +7,11 @@
     {% include 'components/kb-side-nav.twig' %}
 
     <section class="article-wrapper">
+        <div class="kb-breadcrumbs">
+            <a href="/knowledge-base-archive">Archive Home</a> <span>/</span>
+            <a href="{{ term.link }}">{{ term.name }}</a>
+        </div>
+
         <div class="kb-intro">
             <h1>{{ term.name }}</h1>
             <p>{{ term.description }}</p>

@@ -9,7 +9,9 @@
 
         <div class="menu-section">
             <button class="menu-section--dropdown-title">
-                {{ term.name }} ({{ count }}) <span class="fa-solid fa-sort-down"></span>
+                <span class="icon {{ term.fa_icon }}"></span>
+                {{ term.name }} ({{ count }})
+                <span class="fa-solid fa-sort-down"></span>
             </button>
 
             <div class="menu-section__menu">
