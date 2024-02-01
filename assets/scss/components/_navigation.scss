@@ -45,12 +45,12 @@
             padding: 0;
             list-style: none;
         }
-    
+
         .nav-link {
             position: relative;
             font-size: 1.1rem;
             color: $white;
-    
+
             &:before {
                 content: '';
                 position: absolute;
@@ -61,16 +61,16 @@
                 background-color: $light-purple;
                 transition: all 0.2s ease-out;
             }
-    
+
             &:hover {
                 color: $light-purple;
-    
+
                 &:before {
                     width: 100%;
                     transition: all 0.2s ease-out;
                 }
             }
-    
+
             &.active {
                 color: $light-purple;
                 &:before { width: 100%; }

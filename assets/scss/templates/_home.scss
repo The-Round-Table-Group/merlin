@@ -1,0 +1,65 @@
+.favorited-items {
+    padding: 1rem 0 5rem;
+
+    ul {
+        padding: 0;
+        margin: 0 0 0 2.25rem;
+        list-style: disc;
+
+        li {
+            border-top: none;
+            padding: 0;
+            margin-bottom: 5px;
+        }
+    }
+
+    p {
+        margin-top: -1.1rem;
+    }
+
+    .favorites-list {
+        padding-top: 2rem;
+
+        .favorite-item p a {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: $light-purple;
+                transition: all 0.2s ease-out;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+            }
+
+            &:hover {
+                color: $light-purple;
+
+                &:before {
+                    width: 100%;
+                    transition: all 0.2s ease-out;
+                }
+            }
+        }
+    }
+}
+
+.simplefavorites-clear {
+    margin-top: 1rem !important;
+    margin-bottom: 5rem !important;
+    border: 1px solid $light-purple !important;
+    padding: 0.6rem 1.25rem !important;
+    color: $light-purple !important;
+
+    &:hover {
+        background: $light-purple !important;
+        color: $white !important;
+    }
+}

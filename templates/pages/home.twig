@@ -3,5 +3,12 @@
 {% block content %}
 <section class="content-block">
     {{ post.content }}
+
+    <div class="favorited-items">
+        <h3>Favorited Items</h3>
+        {{ fn('the_user_favorites_list') }}
+    </div>
+
+    {{ fn('the_clear_favorites_button') }}
 </section>
 {% endblock %}
