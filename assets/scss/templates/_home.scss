@@ -1,20 +1,23 @@
 .favorited-items {
     padding: 1rem 0 5rem;
+    max-width: 50rem;
+    margin: 0 auto 7.5rem;
 
     ul {
+        position: relative;
+        margin: 0 0 3.25rem 0;
         padding: 0;
-        margin: 0 0 0 2.25rem;
-        list-style: disc;
 
         li {
-            border-top: none;
             padding: 0;
+            margin-top: 5px;
             margin-bottom: 5px;
         }
     }
 
     p {
-        margin-top: -1.1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     .favorites-list {
@@ -48,12 +51,35 @@
                 }
             }
         }
+
+        .favorite-item {
+            .simplefavorite-button.active {
+                text-align: right;
+                position: absolute;
+                right: 0;
+                transition: unset;
+
+                &:before {
+                    content: '—';
+                    position: absolute;
+                    left: -0.85rem;
+                }
+
+                &:hover {
+                    transition: unset;
+                    color: $light-purple;
+
+                    .fa-star {
+                        color: $light-purple;
+                    }
+                }
+            }
+        }
     }
 }
 
 .simplefavorites-clear {
     margin-top: 1rem !important;
-    margin-bottom: 5rem !important;
     border: 1px solid $light-purple !important;
     padding: 0.6rem 1.25rem !important;
     color: $light-purple !important;
@@ -62,4 +88,10 @@
         background: $light-purple !important;
         color: $white !important;
     }
+}
+
+.small-text {
+    margin-top: 5px !important;
+    font-size: 0.875rem;
+    color: $red-bar;
 }

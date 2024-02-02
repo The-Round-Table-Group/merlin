@@ -7,8 +7,8 @@
     <div class="favorited-items">
         <h3>Favorited Items</h3>
         {{ fn('the_user_favorites_list') }}
+        {{ fn('the_clear_favorites_button') }}
+        <p class="small-text">This will clear all favorites and is not reversible.</p>
     </div>
-
-    {{ fn('the_clear_favorites_button') }}
 </section>
 {% endblock %}
